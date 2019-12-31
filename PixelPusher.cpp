@@ -12,7 +12,7 @@ constexpr static const int32_t g_kRenderHeight            = g_kWindowHeight / 5;
 constexpr static const int32_t g_kRenderDeviceFlags       = -1;
 constexpr static const int32_t g_kErrorOccurred           = -1;
 
-constexpr static const char* kWindowTitle =               "PixelPusher";
+constexpr static const char* g_kWindowTitle =             "PixelPusher";
 
 
 SDL_Window* CreateCenteredWindow(uint32_t width, uint32_t height, std::string title)
@@ -26,7 +26,7 @@ SDL_Window* CreateCenteredWindow(uint32_t width, uint32_t height, std::string ti
     const int32_t y = DM.h / 2 - height / 2;
 
     // Create the SDL window
-    SDL_Window* pWindow = SDL_CreateWindow("SDL2 Pixel Test", x, y, width, height,
+    SDL_Window* pWindow = SDL_CreateWindow(g_kWindowTitle, x, y, width, height,
         SDL_WINDOW_ALLOW_HIGHDPI);
 
     if (e(!pWindow, "Failed to create Window\n"));
@@ -86,7 +86,7 @@ int32_t Startup(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** 
 
     if (e(!ppWindow, "Potiner to Window* was null\n")) return -1;
 
-    *ppWindow = CreateCenteredWindow(g_kWindowWidth, g_kWindowHeight, kWindowTitle);
+    *ppWindow = CreateCenteredWindow(g_kWindowWidth, g_kWindowHeight, g_kWindowTitle);
 
     if (e(!*ppWindow, "No Window. Aborting..."))
     {
