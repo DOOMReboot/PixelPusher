@@ -85,17 +85,17 @@ int32_t Startup(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** 
     SDL_Init(SDL_INIT_VIDEO);
 
     if (e(!ppWindow, "Potiner to Window* was null\n")) return -1;
-    if (e(!ppRenderer, "Pointer to Renderer* was null\n")) return -1;
-    if (e(!ppTexture, "Pointer to Texture* was null\n")) return -1;
 
     *ppWindow = CreateCenteredWindow(g_kWindowWidth, g_kWindowHeight, kWindowTitle);
 
-    if (e(!ppWindow, "No Window. Aborting..."))
+    if (e(!*ppWindow, "No Window. Aborting..."))
     {
         Shutdown(ppWindow, ppRenderer, ppTexture);
 
         return -1;
     }
+
+    if (e(!ppRenderer, "Pointer to Renderer* was null\n")) return -1;
 
     *ppRenderer = CreateRenderer(*ppWindow, true);
 
@@ -106,14 +106,18 @@ int32_t Startup(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** 
         return -1;
     }
 
+    if (e(!ppTexture, "Pointer to Texture* was null\n")) return -1;
+
     *ppTexture = CreateBackBufferTexture(*ppRenderer);
 
-    if (e(!ppTexture, "No back buffer Texture. Aborting..."))
+    if (e(!*ppTexture, "No back buffer Texture. Aborting..."))
     {
         Shutdown(ppWindow, ppRenderer, ppTexture);
 
         return -1;
     }
+
+    return 0;
 }
 
 // Call this once during each render loop in order to determine when the user wishes to terminate the program
@@ -192,7 +196,6 @@ int main()
     if (e(Startup(&pWindow, &pRenderer, &pTexture), "Startup Failed. Aborting...\n"))
     {
         Shutdown(&pWindow, &pRenderer, &pTexture);
-
         return -1;
     }
 
@@ -207,7 +210,7 @@ int main()
     {
         if (!firstFrame)
         {
-            Render(pWindow, pRenderer, pTexture);
+            if (e(Render(pWindow, pRenderer, pTexture), "Render failed\n")) break;
 
             running = ProcessInput();
 
