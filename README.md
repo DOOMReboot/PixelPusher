@@ -1,4 +1,4 @@
-# PixelPusher - SDL Software Rendering from Scratch, Pixel-by-Pixel
+# SDL Software Rendering from Scratch, Pixel-by-Pixel
 
 **PixelPusher demonstrates a very fast way to display randomly colored pixels in a window with SDL**
 
