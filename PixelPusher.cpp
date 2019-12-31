@@ -214,6 +214,6 @@ int main()
     std::cout << "Average FPS:     " << static_cast<double>(totalFramesRendered)* SDL_GetPerformanceFrequency() / totalTicks << "\n";
 
     Shutdown(&pWindow, &pRenderer, &pTexture);
-
+    
     return 0;
 }
