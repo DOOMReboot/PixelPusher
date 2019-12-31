@@ -72,8 +72,12 @@ https://www.libsdl.org/download-2.0.php
 **Build and Run!** 
 
 
-## Next Steps...
+## Possible Next Steps...
 
-**Refactor code into classes.  
+**Refactor code into classes.**  
+
   * A Window class which handles the window lifecycle and SDL  
+  
   * A virtual Game/App class with Update(), Render(), etc. which can be given to the Window.  This allows for the potential of hot-swapping demos/prototypes
+  
+  * A solitary Renderer class which can contain all pixel buffer manipulation utilities.  Probably used as a member of the Game/App class who chains together the virtual lifecycle functions.
