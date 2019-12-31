@@ -64,6 +64,6 @@ https://www.libsdl.org/download-2.0.php
 
 **Follow steps #2 and #3 again, but for this Release configuration.**
 
-**Make sure that you input the correct library directory (x86 vs x64).
+**Make sure that you input the correct library directory (x86 vs x64).**
 
 **Build and Run!**
