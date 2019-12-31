@@ -79,7 +79,7 @@ void Shutdown(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** pp
     }
 }
 
-// Initialize SDL Components
+// Initialize SDL Components 
 int32_t Startup(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** ppTexture)
 {
     SDL_Init(SDL_INIT_VIDEO);
