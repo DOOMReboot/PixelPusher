@@ -2,6 +2,7 @@
 
 **PixelPusher demonstrates a very fast way to display randomly colored pixels in a window with SDL (C++)**
 
+![PixelPusherScreenShot.png](https://doomreboot.github.io/PixelPusherScreenShot.png)
 
 ## Step 1 - Install SDL2 (Simple Direct Media Layer)
 
