@@ -12,7 +12,7 @@ constexpr static const int32_t g_kRenderHeight            = g_kWindowHeight / 10
 constexpr static const int32_t g_kRenderDeviceFlags       = -1;
 constexpr static const int32_t g_kErrorOccurred           = -1;
 
-constexpr static const char* kWindowTitle =             "PixelPusher";
+constexpr static const char* kWindowTitle =               "PixelPusher";
 
 
 SDL_Window* CreateCenteredWindow(uint32_t width, uint32_t height, std::string title)
@@ -60,7 +60,6 @@ void Shutdown(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** pp
     if (ppTexture)
     {
         SDL_DestroyTexture(*ppTexture);
-
         *ppTexture = nullptr;
     }
 
@@ -68,7 +67,6 @@ void Shutdown(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** pp
     if (ppRenderer)
     {
         SDL_DestroyRenderer(*ppRenderer);
-
         *ppRenderer = nullptr;
     }
 
@@ -76,7 +74,6 @@ void Shutdown(SDL_Window** ppWindow, SDL_Renderer** ppRenderer, SDL_Texture** pp
     if (ppWindow)
     {
         SDL_DestroyWindow(*ppWindow);
-
         *ppWindow = nullptr;
     }
 }
@@ -130,7 +127,7 @@ int32_t Render(SDL_Window* pWindow, SDL_Renderer* pRenderer, SDL_Texture* pTextu
         // as it will always be a multiple of four
         pitch /= sizeof(uint32_t);
 
-        // Fill screen with random colored pixels
+        // Fill texture with randomly colored pixels
         for (uint32_t i = 0; i < g_kRenderWidth * g_kRenderHeight; ++i)
             pPixelBuffer[i] = ARGB(FastRand() % 256, FastRand() % 256, FastRand() % 256, 255);
 
@@ -207,7 +204,6 @@ int main()
         else
         {
             lastTick = SDL_GetPerformanceCounter();
-
             firstFrame = false;
         }
     }
@@ -219,5 +215,5 @@ int main()
 
     Shutdown(&pWindow, &pRenderer, &pTexture);
 
-	return 0;
+    return 0;
 }
