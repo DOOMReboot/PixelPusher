@@ -55,15 +55,15 @@ Set project to handle High DPI
 
 Build the project.  This will create a Debug directory such as Drive:\PixelPusher\Debug. 
 
-Copy the appropriate SDL2.dll from under Drive:\Libraries\SDL2.. into the newly created Debug directory.
+Copy the appropriate (x86 vs x64) SDL2.dll from under Drive:\Libraries\SDL2\.. into the newly created Debug directory.
 
 
 ## Step 4 - Configure Release Build and Run
 
 Switch the project's build configuration to Release.  
 
-Follow steps #2 and #3 again, but for this Release configuration
+Follow steps #2 and #3 again, but for this Release configuration.
 
-Make sure that you input the correct library directory (x86 vs x64)
+Make sure that you input the correct library directory (x86 vs x64).
 
-Build and Run
+Build and Run!
