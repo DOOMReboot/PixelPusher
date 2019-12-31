@@ -70,3 +70,10 @@ https://www.libsdl.org/download-2.0.php
 **Make sure that you input the correct library directory (x86 vs x64).**
 
 **Build and Run!** 
+
+
+## Next Steps...
+
+**Refactor code into classes.  
+  * A Window class which handles the window lifecycle and SDL  
+  * A virtual Game/App class with Update(), Render(), etc. which can be given to the Window.  This allows for the potential of hot-swapping demos/prototypes
