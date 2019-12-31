@@ -1,6 +1,6 @@
 # PixelPusher - SDL Software Rendering from Scratch, Pixel-by-Pixel
 
-**PixelPusher demonstrates a very fast way to display randomly colored pixels in a window with SDL (C++)**
+**PixelPusher demonstrates a very fast way to display randomly colored pixels in a window with SDL**
 
 **The key takeaway here is that one of the fastest ways to write pixels to the screen with SDL without tearing is to render them to a buffer in RAM, upload the buffer to a texture on the video card, and then present it to the main framebuffer.**
 
